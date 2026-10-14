@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://bkvgq1d8we14n"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_3daxb"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_x0el1"]
+radius = 5.0
+height = 43.199997
+
+[node name="Ufo" type="Area2D" unique_id=956119527]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=668729183]
+rotation = 1.558579
+shape = SubResource("CapsuleShape2D_3daxb")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="." unique_id=105699998]
+position = Vector2(0, 7)
+rotation = 1.5707964
+scale = Vector2(1.25, 1.25)
+shape = SubResource("CapsuleShape2D_x0el1")
+one_way_collision = true

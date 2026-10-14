@@ -1,0 +1,100 @@
+[gd_scene format=3 uid="uid://b3dbooyw7qwfe"]
+
+[ext_resource type="Texture2D" uid="uid://dtsj3y8fxad3m" path="res://Main/icon.svg" id="1_o0uas"]
+
+[node name="PlayerUi" type="Control" unique_id=1328855100]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=257543492]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -64.0
+offset_right = 64.0
+offset_bottom = 155.0
+grow_horizontal = 2
+
+[node name="Label" type="Label" parent="VBoxContainer" unique_id=699374215]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "0123456789"
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer" unique_id=519611176]
+layout_mode = 2
+texture = ExtResource("1_o0uas")
+flip_h = true
+flip_v = true
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer" unique_id=951687416]
+layout_mode = 2
+
+[node name="Life" type="TextureRect" parent="VBoxContainer/HBoxContainer" unique_id=1091204734]
+layout_mode = 2
+
+[node name="Life2" type="TextureRect" parent="VBoxContainer/HBoxContainer" unique_id=1590458167]
+layout_mode = 2
+
+[node name="Life3" type="TextureRect" parent="VBoxContainer/HBoxContainer" unique_id=1853368164]
+layout_mode = 2
+
+[node name="Life4" type="TextureRect" parent="VBoxContainer/HBoxContainer" unique_id=1712485960]
+layout_mode = 2
+
+[node name="Life5" type="TextureRect" parent="VBoxContainer/HBoxContainer" unique_id=1055279460]
+layout_mode = 2
+
+[node name="Life6" type="TextureRect" parent="VBoxContainer/HBoxContainer" unique_id=991868948]
+layout_mode = 2
+
+[node name="Life7" type="TextureRect" parent="VBoxContainer/HBoxContainer" unique_id=763104660]
+layout_mode = 2
+
+[node name="Life8" type="TextureRect" parent="VBoxContainer/HBoxContainer" unique_id=90252039]
+layout_mode = 2
+
+[node name="Life9" type="TextureRect" parent="VBoxContainer/HBoxContainer" unique_id=1850288398]
+layout_mode = 2
+
+[node name="Life10" type="TextureRect" parent="VBoxContainer/HBoxContainer" unique_id=783499388]
+layout_mode = 2
+
+[node name="Life11" type="TextureRect" parent="VBoxContainer/HBoxContainer" unique_id=292595836]
+layout_mode = 2
+
+[node name="Life12" type="TextureRect" parent="VBoxContainer/HBoxContainer" unique_id=445856999]
+layout_mode = 2
+
+[node name="Life13" type="TextureRect" parent="VBoxContainer/HBoxContainer" unique_id=1114589778]
+layout_mode = 2
+
+[node name="Life14" type="TextureRect" parent="VBoxContainer/HBoxContainer" unique_id=569777818]
+layout_mode = 2
+
+[node name="Life15" type="TextureRect" parent="VBoxContainer/HBoxContainer" unique_id=2130939044]
+layout_mode = 2
+
+[node name="Life16" type="TextureRect" parent="VBoxContainer/HBoxContainer" unique_id=1467472136]
+layout_mode = 2
+
+[node name="Life17" type="TextureRect" parent="VBoxContainer/HBoxContainer" unique_id=1894533485]
+layout_mode = 2
+
+[node name="Life18" type="TextureRect" parent="VBoxContainer/HBoxContainer" unique_id=1372503279]
+layout_mode = 2
+
+[node name="Life19" type="TextureRect" parent="VBoxContainer/HBoxContainer" unique_id=334137104]
+layout_mode = 2
+
+[node name="Life20" type="TextureRect" parent="VBoxContainer/HBoxContainer" unique_id=1283800937]
+layout_mode = 2
+
+[node name="Life21" type="TextureRect" parent="VBoxContainer/HBoxContainer" unique_id=351148524]
+layout_mode = 2
