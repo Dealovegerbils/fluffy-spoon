@@ -1,12 +1,12 @@
 extends Area2D
 class_name Bullet 
 
-var speed: float = 60 # px/ sec.
+var speed: float = 167 # px/ sec.
 var lifespan: float =  2.0 # seconds til end. 
 
 func _process(delta: float) -> void:
-	position.x += cos(rotation+PI/2) * delta * speed 
-	position.y += sin(rotation+PI/2) * delta * speed 
+	position.x += cos(rotation-PI/2) * delta * speed 
+	position.y += sin(rotation-PI/2) * delta * speed 
 	
 	#countdown
 	lifespan -= delta
