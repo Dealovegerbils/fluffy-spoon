@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://d01ut7s70ugxv"]
 
-[ext_resource type="Script" uid="uid://b2xoltseursle" path="res://Player UI/Rock/Rock.gd" id="1_66458"]
+[ext_resource type="Script" uid="uid://b2xoltseursle" path="res://Rock/Rock.gd" id="1_66458"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_3daxb"]
 

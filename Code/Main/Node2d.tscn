@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://bkyq48ga2hjxg"]
 
 [ext_resource type="PackedScene" uid="uid://dousnq662ltfl" path="res://Bullet/Bullet.tscn" id="1_554t7"]
-[ext_resource type="PackedScene" uid="uid://d01ut7s70ugxv" path="res://Player UI/Rock/Rock.tscn" id="2_va8hb"]
+[ext_resource type="PackedScene" uid="uid://d01ut7s70ugxv" path="res://Rock/Rock.tscn" id="2_va8hb"]
 [ext_resource type="PackedScene" uid="uid://bkvgq1d8we14n" path="res://UFO/UFO.tscn" id="3_bxdov"]
 [ext_resource type="PackedScene" uid="uid://co6uvllbpv2os" path="res://Ship/Ship.tscn" id="4_s837p"]
 
