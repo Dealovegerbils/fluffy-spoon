@@ -16,6 +16,7 @@ func _process(delta: float) -> void:
 	
 	if Input.is_action_pressed("turn_cw"):
 		rotation_degrees += turn_speed * delta
+	
 	if Input.is_action_pressed("pause"):
 		get_tree().paused = true 
 

@@ -11,6 +11,9 @@ size = Vector2(50, 16)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ngct0"]
 size = Vector2(10, 20)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ui4li"]
+size = Vector2(3.820897, 14.565026)
+
 [node name="Ship" type="Area2D" unique_id=961439069]
 script = ExtResource("1_11244")
 
@@ -29,3 +32,10 @@ debug_color = Color(0.85363483, 0.27946565, 0.61815757, 0.41960785)
 position = Vector2(-12, -8)
 skew = 0.04363323
 shape = SubResource("RectangleShape2D_ngct0")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="." unique_id=1811776111]
+position = Vector2(0, -6)
+rotation = -0.0353288
+skew = 0.04363323
+shape = SubResource("RectangleShape2D_ui4li")
+debug_color = Color(0.8235294, 0.6, 0.9882353, 0.41960785)
