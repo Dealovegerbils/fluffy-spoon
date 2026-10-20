@@ -1,22 +1,16 @@
-extends Area2D
+extends ScreenWrapper
 class_name Rock 
+
 var speed: float= 100  # px/ sec
-var direction: Vector2 = Vector2(-1,1)
+var direction: Vector2 = Vector2.ZERO
 var velocity: Vector2 = Vector2.ZERO
 #var velocity: Vector2 = Vector2.ZERO
-
+func _ready() -> void:
+	direction = Vector2(randf_range(-1.0,1.0),randf_range(-1.0,1.0))
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	velocity = direction * speed * delta
 	position += velocity
+	super._process(delta)
 	
-	if position.x < 0:
-		position.x= get_viewport().size.x
-	if position.y < 0: 
-		position.y = get_viewport().size.y
-	if position.x > get_viewport().size.x:
-		position.x = 0
-	if position.y > get_viewport().size.y: 
-		position.y = 0
-		

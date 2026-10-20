@@ -8,5 +8,6 @@
 script = ExtResource("1_qratc")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=132279770]
+scale = Vector2(0.5, 0.5)
 shape = SubResource("CapsuleShape2D_3daxb")
 debug_color = Color(0.47312123, 0.5893587, 0.058771297, 0.41960785)
