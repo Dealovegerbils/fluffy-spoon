@@ -25,7 +25,9 @@ func _process(delta: float) -> void:
 	
 	if Input.is_action_pressed("pause"):
 		get_tree().paused = true 
-	position += velocity
+	#var c: float = 1000 #px/sec
+	#velocity = velocity.clamp(Vector2(-c,c),Vector2(-c,c))
+	position += velocity * delta
 	super._process(delta)
 	
 
