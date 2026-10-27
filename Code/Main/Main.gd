@@ -4,6 +4,8 @@ class_name Main
 const ROCK = preload("res://Rock/Rock.tscn")
 const UfO = preload("res://UFO/UFO.tscn")
 const PLAYER_UI = preload("res://Player UI/PlayerUI.tscn")
+const UFO = preload("res://UFO/UFO.tscn")
+
 
 @onready var ufo_timer: Timer = $UfoTimer
 
@@ -28,6 +30,10 @@ func _process(delta: float) -> void:
 		#get_tree().paused = true
 		get_tree().quit()
 
+func spawn_ship():
+	var ship = SHIP.instantiate()
+	ship.player = self
+	
 ## Spawn a number of Rocks from the corners 
 func spawn_rocks(rock_count):
 	for r in rock_count:

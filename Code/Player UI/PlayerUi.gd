@@ -21,7 +21,9 @@ func update_lives(delta_lives):
 	lives =+ delta_lives # 6
 	clear_lives()
 	build_lives()
-
+func _process(delta: float) -> void:
+	If Input.is_action_just_pressed("launch_ship"):
+		spawn_ship()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func clear_lives():
