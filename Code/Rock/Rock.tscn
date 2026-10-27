@@ -1,11 +1,34 @@
 [gd_scene format=3 uid="uid://d01ut7s70ugxv"]
 
 [ext_resource type="Script" uid="uid://b2xoltseursle" path="res://Rock/Rock.gd" id="1_66458"]
+[ext_resource type="Texture2D" uid="uid://dscnbqebllxt0" path="res://Rock/Assests/rock b.png" id="2_751ln"]
+[ext_resource type="Texture2D" uid="uid://ckruk4ue5wk81" path="res://Rock/Assests/rock c.png" id="3_c4a8t"]
+[ext_resource type="Texture2D" uid="uid://bwttv07knoyv5" path="res://Rock/Assests/Rocka.png" id="4_ru0k0"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_3daxb"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_3daxb"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_751ln")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_c4a8t")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_ru0k0")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
 
 [node name="Rock" type="Area2D" unique_id=1148541090]
 script = ExtResource("1_66458")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1582838895]
 shape = SubResource("CircleShape2D_3daxb")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CollisionShape2D" unique_id=110426165]
+sprite_frames = SubResource("SpriteFrames_3daxb")

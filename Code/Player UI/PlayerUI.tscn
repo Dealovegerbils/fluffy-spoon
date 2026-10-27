@@ -1,10 +1,9 @@
 [gd_scene format=3 uid="uid://b3dbooyw7qwfe"]
 
-[ext_resource type="Texture2D" uid="uid://dtsj3y8fxad3m" path="res://Main/icon.svg" id="1_o0uas"]
-[ext_resource type="Texture2D" uid="uid://cmp8dhqeo5lyx" path="res://Main/icon.png" id="2_njtcb"]
+[ext_resource type="Script" uid="uid://padf1g0yso3b" path="res://Player UI/PlayerUi.gd" id="1_4ei3g"]
+[ext_resource type="PackedScene" uid="uid://kax7ew63xkxl" path="res://Player UI/assets/life.tscn" id="2_njtcb"]
 
-[node name="PlayerUi" type="Control" unique_id=1328855100]
-layout_mode = 3
+[node name="PlayerUi" type="PanelContainer" unique_id=442111134]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -14,32 +13,20 @@ grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
+script = ExtResource("1_4ei3g")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=257543492]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.27
-anchor_right = 0.72700006
-anchor_bottom = 0.19900002
-offset_left = 51.0
-offset_right = -49.50003
-offset_bottom = -4.200012
-grow_horizontal = 2
+[node name="VBox" type="VBoxContainer" parent="." unique_id=257543492]
+layout_mode = 2
 
-[node name="Label" type="Label" parent="VBoxContainer" unique_id=699374215]
+[node name="ScoreUI" type="Label" parent="VBox" unique_id=699374215]
 layout_mode = 2
 size_flags_horizontal = 4
 text = "0123456789"
 
-[node name="TextureRect" type="TextureRect" parent="VBoxContainer" unique_id=519611176]
-layout_mode = 2
-texture = ExtResource("1_o0uas")
-flip_h = true
-flip_v = true
-
-[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer" unique_id=951687416]
+[node name="LivesUI" type="HBoxContainer" parent="VBox" unique_id=951687416]
 layout_mode = 2
 
-[node name="Life" type="TextureRect" parent="VBoxContainer/HBoxContainer" unique_id=1091204734]
+[node name="Life" parent="VBox/LivesUI" unique_id=329785628 instance=ExtResource("2_njtcb")]
 layout_mode = 2
-texture = ExtResource("2_njtcb")
+offset_transform_enabled = true
+offset_transform_scale = Vector2(5, 5)
