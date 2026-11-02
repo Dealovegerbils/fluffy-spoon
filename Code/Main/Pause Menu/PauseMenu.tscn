@@ -1,0 +1,50 @@
+[gd_scene format=3 uid="uid://oads5k8hobgn"]
+
+[ext_resource type="Script" uid="uid://bol8t768bkx7x" path="res://Main/Pause Menu/PauseMenu.gd" id="1_snm6l"]
+
+[sub_resource type="Theme" id="Theme_ui4li"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5k755"]
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.8, 0.27450982, 0.8, 1)
+border_blend = true
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+shadow_color = Color(0.87058824, 0.7490196, 0, 0.6)
+
+[node name="PauseMenu" type="PanelContainer" unique_id=455681491]
+modulate = Color(1, 0.38039216, 1, 1)
+self_modulate = Color(0.27058825, 1, 1, 1)
+show_behind_parent = true
+top_level = true
+light_mask = 517
+visibility_layer = 329
+anchors_preset = -1
+anchor_right = 0.21200001
+anchor_bottom = 0.057000004
+offset_bottom = 0.3999977
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 20.0
+theme = SubResource("Theme_ui4li")
+theme_override_styles/panel = SubResource("StyleBoxFlat_5k755")
+script = ExtResource("1_snm6l")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=928412959]
+layout_mode = 2
+
+[node name="PlayButton" type="Button" parent="VBoxContainer" unique_id=1465016292]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.8745098, 0.0627451, 0.8745098, 1)
+theme_override_colors/font_pressed_color = Color(1, 0.36862746, 0.5921569, 1)
+text = "Play "
+clip_text = true
+
+[node name="QuitButton" type="Button" parent="VBoxContainer" unique_id=10838547]
+layout_mode = 2
+text = "Quit"
