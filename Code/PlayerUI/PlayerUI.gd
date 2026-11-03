@@ -1,7 +1,9 @@
 extends PanelContainer
 class_name PlayerUI
 
-const LIFE = preload("res://Player UI/assets/life.tscn")
+
+const LIFE = preload("res://PlayerUI/assets/life.tscn")
+const SHIP = preload("res://Ship/Ship.tscn")
 
 @onready var score_ui: Label = $VBox/ScoreUI
 @onready var lives_ui: HBoxContainer = $VBox/LivesUI
@@ -21,8 +23,14 @@ func update_lives(delta_lives):
 	lives =+ delta_lives # 6
 	clear_lives()
 	build_lives()
+
+func spawn_ship():
+	var ship = SHIP.instantiate()
+	ship.player = self
+	get_parent().add_child(ship)
+	
 func _process(delta: float) -> void:
-	If Input.is_action_just_pressed("launch_ship"):
+	if Input.is_action_just_pressed("launch_ship"):
 		spawn_ship()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -30,7 +38,7 @@ func clear_lives():
 	for child in lives_ui.get_children():
 		child.queue_free()
 
-func build_lives(): 
-	for l in lives: 
+func build_lives():
+	for l in lives:
 		var life = LIFE.instantiate()
 		lives_ui.add_child(life)

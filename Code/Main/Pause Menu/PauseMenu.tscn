@@ -1,25 +1,28 @@
 [gd_scene format=3 uid="uid://oads5k8hobgn"]
 
 [ext_resource type="Script" uid="uid://bol8t768bkx7x" path="res://Main/Pause Menu/PauseMenu.gd" id="1_snm6l"]
+[ext_resource type="FontFile" uid="uid://hdr3u2un0ctj" path="res://Bullet/Fonts/Redaction50-Bold.ttf" id="2_br8k0"]
+[ext_resource type="FontFile" uid="uid://dl18rb1hq6iuq" path="res://Bullet/Fonts/Redaction50-Italic.ttf" id="3_a5j5p"]
 
 [sub_resource type="Theme" id="Theme_ui4li"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5k755"]
+bg_color = Color(0.6, 0.08627451, 0.6, 1)
 border_width_left = 5
 border_width_top = 5
 border_width_right = 5
 border_width_bottom = 5
-border_color = Color(0.8, 0.27450982, 0.8, 1)
-border_blend = true
+border_color = Color(0.4064663, 0.058851868, 0.40898648, 1)
 corner_radius_top_left = 4
 corner_radius_top_right = 4
 corner_radius_bottom_right = 4
 corner_radius_bottom_left = 4
-shadow_color = Color(0.87058824, 0.7490196, 0, 0.6)
+shadow_color = Color(0.19607843, 0.83137256, 0, 1)
+shadow_size = 12
 
 [node name="PauseMenu" type="PanelContainer" unique_id=455681491]
 modulate = Color(1, 0.38039216, 1, 1)
-self_modulate = Color(0.27058825, 1, 1, 1)
+self_modulate = Color(0.44313726, 0.37254903, 0.9411765, 1)
 show_behind_parent = true
 top_level = true
 light_mask = 517
@@ -39,12 +42,26 @@ script = ExtResource("1_snm6l")
 layout_mode = 2
 
 [node name="PlayButton" type="Button" parent="VBoxContainer" unique_id=1465016292]
+modulate = Color(1, 0.3372549, 1, 1)
+self_modulate = Color(1, 0.61960787, 1, 1)
+light_mask = 1023
+visibility_layer = 1023
 layout_mode = 2
 theme_override_colors/font_color = Color(0.8745098, 0.0627451, 0.8745098, 1)
 theme_override_colors/font_pressed_color = Color(1, 0.36862746, 0.5921569, 1)
+theme_override_fonts/font = ExtResource("2_br8k0")
+theme_override_font_sizes/font_size = 16
 text = "Play "
 clip_text = true
 
-[node name="QuitButton" type="Button" parent="VBoxContainer" unique_id=10838547]
+[node name="ContinueButton" type="Button" parent="VBoxContainer" unique_id=715170694]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("3_a5j5p")
+text = "Continue"
+
+[node name="QuitButton" type="Button" parent="VBoxContainer" unique_id=10838547]
+light_mask = 1023
+visibility_layer = 1023
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_br8k0")
 text = "Quit"

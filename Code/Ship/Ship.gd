@@ -3,7 +3,9 @@ class_name Ship
 
 
 const BULLET = preload("res://Bullet/Bullet.tscn")
+
 var player: PlayerUI
+
 var turn_speed: float = 180 #degrees/ sec.
 var thrust_power: float = 3 #multiplier
 var velocity: Vector2 =Vector2.ZERO
@@ -21,8 +23,6 @@ func _process(delta: float) -> void:
 	if Input.is_action_pressed("thrust"):
 		velocity.x += cos(rotation-PI/2) * thrust_power
 		velocity.y += sin(rotation-PI/2) * thrust_power
-		
-	#TODO Move to Main
 	
 	if Input.is_action_pressed("pause"):
 		get_tree().paused = true 

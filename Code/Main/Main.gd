@@ -3,13 +3,17 @@ class_name Main
 
 const ROCK = preload("res://Rock/Rock.tscn")
 const UfO = preload("res://UFO/UFO.tscn")
-const PLAYER_UI = preload("res://Player UI/PlayerUI.tscn")
-const UFO = preload("res://UFO/UFO.tscn")
-
+const PLAYER_UI = preload("res://PlayerUI/PlayerUI.tscn")
 
 @onready var ufo_timer: Timer = $UfoTimer
 
+
 var players: Array[PlayerUI]
+
+var rock_count: int = 3  
+
+func start_new_round(): 
+	pass
 
 func just_score(delta_score,player):
 	players[0].update_score(delta_score)
@@ -21,13 +25,9 @@ func spawn_player():
 	
 func _ready() -> void:
 	ufo_timer.timeout.connect(on_ufo_spawned)
-	spawn_rocks(6)
-	spawn_player()
+	#spawn_rocks(6) dont spawn the rocks immediatley
+	#spawn_player()
 
-
-func spawn_ship():
-	var ship = SHIP.instantiate()
-	ship.player = self
 	
 ## Spawn a number of Rocks from the corners 
 func spawn_rocks(rock_count):
