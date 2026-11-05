@@ -4,6 +4,8 @@ class_name Main
 const ROCK = preload("res://Rock/Rock.tscn")
 const UfO = preload("res://UFO/UFO.tscn")
 const PLAYER_UI = preload("res://PlayerUI/PlayerUI.tscn")
+@onready var pause_menu: PauseMenu = $PauseMenu
+
 
 @onready var ufo_timer: Timer = $UfoTimer
 
@@ -20,6 +22,7 @@ func just_score(delta_score,player):
 	
 func spawn_player():
 	var player = PLAYER_UI.instantiate()
+	player.main = self
 	add_child(player)
 	players.append(player)
 	
@@ -47,3 +50,4 @@ func on_ufo_spawned():
 	
 	ufo.position.y = randf_range(0, get_viewport().size.y)
 	add_child(ufo)
+	
