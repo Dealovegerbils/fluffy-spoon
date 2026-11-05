@@ -43,3 +43,4 @@ func fire():
 func destroy():
 	player.current_ship = null
 	queue_free()
+	

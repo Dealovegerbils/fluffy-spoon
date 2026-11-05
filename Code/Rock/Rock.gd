@@ -2,6 +2,7 @@ extends ScreenWrapper
 class_name Rock
 
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
+const ROCK = preload("uid://d01ut7s70ugxv")
 
 var main: Main
 
@@ -31,3 +32,14 @@ func on_area_entered(other_area: Area2D):
 	if other_area is Ship:
 		other_area.destroy()
 		queue_free()
+		
+func split():
+	if scale.x > 0.25:
+	# Spawn 2 new rocks. 
+	# Delete current rock. 
+		for i in 2: 
+			var rock = ROCK.instantiate()
+			rock.position =position
+			rock.scale = scale * 0.5
+			get_parent().add_child.called_deferred(rock)
+	queue_free()

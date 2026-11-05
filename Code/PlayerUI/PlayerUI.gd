@@ -1,7 +1,6 @@
 extends PanelContainer
 class_name PlayerUI
 
-
 const LIFE = preload("res://PlayerUI/assets/life.tscn")
 const SHIP = preload("res://Ship/Ship.tscn")
 
@@ -12,33 +11,24 @@ var current_ship: Ship = null
 
 var score: int = 0
 var lives: int = 3
-# Called when the node enters the scene tree for the first time.
+
 func _ready() -> void:
 	update_score(1)
-	update_lives(7) # 6
+	update_lives(3) # 6
 
-func update_score(delta_score):
-	score += delta_score
-	score_ui.text=str(score)
-
-func update_lives(delta_lives):
-	lives =+ delta_lives # 6
-	clear_lives()
-	build_lives()
-
-func spawn_ship():
-	if current_ship == null:
-		var ship = SHIP.instantiate()
-		ship.player = self
-		ship = get_viewport().size/2
-		add_child(ship)
-		current_ship = ship
-		
-func _process(_delta: float) -> void:
+func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("launch_ship"):
 		spawn_ship()
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
+func update_score(delta_score):
+	score += delta_score
+	score_ui.text = str(score)
+
+func update_lives(delta_lives):
+	lives += delta_lives # 6
+	clear_lives()
+	build_lives()
+
 func clear_lives():
 	for child in lives_ui.get_children():
 		child.queue_free()
@@ -47,3 +37,11 @@ func build_lives():
 	for l in lives:
 		var life = LIFE.instantiate()
 		lives_ui.add_child(life)
+
+func spawn_ship():
+	if current_ship == null:
+		var ship = SHIP.instantiate()
+		ship.player = self
+		ship.position = get_viewport().size / 2
+		get_parent().add_child(ship)
+		current_ship = ship
