@@ -3,20 +3,34 @@
 [ext_resource type="Script" uid="uid://padf1g0yso3b" path="res://PlayerUI/PlayerUI.gd" id="1_4n4wi"]
 [ext_resource type="PackedScene" uid="uid://kax7ew63xkxl" path="res://PlayerUI/assets/life.tscn" id="1_7o3gy"]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_plr6h"]
+bg_color = Color(0.33977932, 0.8777608, 0.20635933, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.9613188, 0.2666883, 0.9179631, 1)
+
 [node name="PlayerUI" type="PanelContainer" unique_id=442111134]
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_top = -6.0
-offset_bottom = -6.0
+light_mask = 1023
+visibility_layer = 1023
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -241.0
+offset_right = 241.0
+offset_bottom = 101.0
 grow_horizontal = 2
-grow_vertical = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
+theme_override_styles/panel = SubResource("StyleBoxFlat_plr6h")
 script = ExtResource("1_4n4wi")
 
 [node name="VBox" type="VBoxContainer" parent="." unique_id=257543492]
 layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+alignment = 1
 
 [node name="ScoreUI" type="Label" parent="VBox" unique_id=699374215]
 layout_mode = 2

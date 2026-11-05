@@ -8,12 +8,14 @@ const SHIP = preload("res://Ship/Ship.tscn")
 @onready var score_ui: Label = $VBox/ScoreUI
 @onready var lives_ui: HBoxContainer = $VBox/LivesUI
 
+var current_ship: Ship = null
+
 var score: int = 0
 var lives: int = 3
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	update_score(1)
-	update_lives(3) # 6
+	update_lives(7) # 6
 
 func update_score(delta_score):
 	score += delta_score
@@ -25,11 +27,14 @@ func update_lives(delta_lives):
 	build_lives()
 
 func spawn_ship():
-	var ship = SHIP.instantiate()
-	ship.player = self
-	get_parent().add_child(ship)
-	
-func _process(delta: float) -> void:
+	if current_ship == null:
+		var ship = SHIP.instantiate()
+		ship.player = self
+		ship = get_viewport().size/2
+		add_child(ship)
+		current_ship = ship
+		
+func _process(_delta: float) -> void:
 	if Input.is_action_just_pressed("launch_ship"):
 		spawn_ship()
 

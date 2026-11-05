@@ -3,4 +3,6 @@
 [ext_resource type="Texture2D" uid="uid://cmp8dhqeo5lyx" path="res://Main/icon.png" id="1_lbaia"]
 
 [node name="Life" type="TextureRect" unique_id=329785628]
+modulate = Color(0.9185632, 0.3181563, 0.99999994, 1)
+self_modulate = Color(1, 0.6603129, 0.90432644, 1)
 texture = ExtResource("1_lbaia")

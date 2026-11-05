@@ -7,7 +7,7 @@ const BULLET = preload("res://Bullet/Bullet.tscn")
 var player: PlayerUI
 
 var turn_speed: float = 180 #degrees/ sec.
-var thrust_power: float = 3 #multiplier
+var thrust_power: float = 1.4 #multiplier
 var velocity: Vector2 =Vector2.ZERO
 
 func _process(delta: float) -> void:
@@ -39,3 +39,7 @@ func fire():
 	bullet.position = self.position 
 	bullet.rotation = rotation
 	get_parent().add_child(bullet)
+
+func destroy():
+	player.current_ship = null
+	queue_free()

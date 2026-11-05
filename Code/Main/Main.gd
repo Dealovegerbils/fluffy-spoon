@@ -19,7 +19,7 @@ func just_score(delta_score,player):
 	players[0].update_score(delta_score)
 	
 func spawn_player():
-	var player =PLAYER_UI.instantiate()
+	var player = PLAYER_UI.instantiate()
 	add_child(player)
 	players.append(player)
 	

@@ -39,3 +39,5 @@ rotation = -0.0353288
 skew = 0.04363323
 shape = SubResource("RectangleShape2D_ui4li")
 debug_color = Color(0.8235294, 0.6, 0.9882353, 0.41960785)
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1134068596]
