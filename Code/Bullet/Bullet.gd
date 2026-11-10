@@ -1,6 +1,7 @@
 extends ScreenWrapper
 class_name Bullet 
-
+## TODO :[ Set this explictly in the next version later
+## Currently Fixes the bullet crashes
 var player: PlayerUI 
 
 var speed: float = 300 # px/ sec.

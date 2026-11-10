@@ -5,8 +5,6 @@ const ROCK = preload("res://Rock/Rock.tscn")
 const UfO = preload("res://UFO/UFO.tscn")
 const PLAYER_UI = preload("res://PlayerUI/PlayerUI.tscn")
 @onready var pause_menu: PauseMenu = $PauseMenu
-
-
 @onready var ufo_timer: Timer = $UfoTimer
 
 

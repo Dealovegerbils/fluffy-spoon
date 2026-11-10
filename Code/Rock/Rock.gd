@@ -25,13 +25,14 @@ func _process(delta: float) -> void:
 func on_area_entered(other_area: Area2D):
 	if other_area is Bullet:
 		if other_area.player != null:
-			main.just_score(1, other_area.player)
+			split()
+			main.just_score(1,other_area.player)
 		other_area.queue_free()
 		queue_free()
 	
 	if other_area is Ship:
 		other_area.destroy()
-		queue_free()
+		split()
 		
 func split():
 	if scale.x > 0.25:
@@ -39,7 +40,8 @@ func split():
 	# Delete current rock. 
 		for i in 2: 
 			var rock = ROCK.instantiate()
-			rock.position =position
+			rock.main = self.main
+			rock.position = position
 			rock.scale = scale * 0.5
-			get_parent().add_child.called_deferred(rock)
+			get_parent().add_child.call_deferred(rock)
 	queue_free()
