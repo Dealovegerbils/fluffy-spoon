@@ -28,14 +28,14 @@ func on_area_entered(other_area: Area2D):
 			split()
 			main.just_score(1,other_area.player)
 		other_area.queue_free()
-		queue_free()
 	
 	if other_area is Ship:
 		other_area.destroy()
 		split()
-		
+	
+	main.check_round_over()
 func split():
-	if scale.x > 0.25:
+	if scale.x > 0.5:
 	# Spawn 2 new rocks. 
 	# Delete current rock. 
 		for i in 2: 
@@ -44,4 +44,5 @@ func split():
 			rock.position = position
 			rock.scale = scale * 0.5
 			get_parent().add_child.call_deferred(rock)
+			main.rocks.append(rock)
 	queue_free()

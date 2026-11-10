@@ -9,11 +9,9 @@ const PLAYER_UI = preload("res://PlayerUI/PlayerUI.tscn")
 
 
 var players: Array[PlayerUI]
+var rock_count: int = 1
+var rocks: Array[Rock]
 
-var rock_count: int = 3  
-
-func start_new_round(): 
-	pass
 
 func just_score(delta_score,player):
 	players[0].update_score(delta_score)
@@ -36,6 +34,7 @@ func spawn_rocks(rock_count):
 		var rock= ROCK.instantiate()
 		rock.main = self
 		add_child(rock)
+		rocks.append(rock)
 	
 
 ##Callback for UFO timer.
@@ -49,3 +48,10 @@ func on_ufo_spawned():
 	ufo.position.y = randf_range(0, get_viewport().size.y)
 	add_child(ufo)
 	
+func next_round(): 
+	rock_count += 1
+	spawn_rocks(rock_count)
+
+func check_round_over():
+	if rocks.size() <= 0:
+		next_round()

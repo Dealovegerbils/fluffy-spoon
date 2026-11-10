@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://co6uvllbpv2os"]
 
 [ext_resource type="Script" uid="uid://dansvaa3darfj" path="res://Ship/Ship.gd" id="1_11244"]
+[ext_resource type="Texture2D" uid="uid://ckne5yma0jt4b" path="res://Ship/Assets/Ship.png" id="2_2s2wp"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3daxb"]
 size = Vector2(10, 20)
@@ -11,14 +12,11 @@ size = Vector2(50, 16)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ngct0"]
 size = Vector2(10, 20)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ui4li"]
-size = Vector2(3.820897, 14.565026)
-
 [node name="Ship" type="Area2D" unique_id=961439069]
 script = ExtResource("1_11244")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=416057523]
-position = Vector2(12, -8)
+position = Vector2(12, -8.000001)
 skew = 0.04363323
 shape = SubResource("RectangleShape2D_3daxb")
 
@@ -33,11 +31,7 @@ position = Vector2(-12, -8)
 skew = 0.04363323
 shape = SubResource("RectangleShape2D_ngct0")
 
-[node name="CollisionShape2D4" type="CollisionShape2D" parent="." unique_id=1811776111]
-position = Vector2(0, -6)
-rotation = -0.0353288
-skew = 0.04363323
-shape = SubResource("RectangleShape2D_ui4li")
-debug_color = Color(0.8235294, 0.6, 0.9882353, 0.41960785)
-
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1134068596]
+texture_filter = 1
+scale = Vector2(2.2, 2.2)
+texture = ExtResource("2_2s2wp")
