@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://dousnq662ltfl"]
 
 [ext_resource type="Script" uid="uid://tj5f5k3bop43" path="res://Bullet/Bullet.gd" id="1_qratc"]
+[ext_resource type="Texture2D" uid="uid://c5otx3d52om0s" path="res://Main/bullet.png" id="2_v7qj8"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_3daxb"]
 
@@ -8,6 +9,13 @@
 script = ExtResource("1_qratc")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=132279770]
-scale = Vector2(0.5, 0.5)
+texture_filter = 1
 shape = SubResource("CapsuleShape2D_3daxb")
 debug_color = Color(0.47312123, 0.5893587, 0.058771297, 0.41960785)
+
+[node name="Sprite2D" type="Sprite2D" parent="CollisionShape2D" unique_id=1465251472]
+
+[node name="Bullet" type="Sprite2D" parent="CollisionShape2D/Sprite2D" unique_id=1227289093]
+position = Vector2(0, -3.5)
+scale = Vector2(1, 1.21875)
+texture = ExtResource("2_v7qj8")
